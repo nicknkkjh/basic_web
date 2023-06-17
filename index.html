@@ -64,11 +64,14 @@
 <script>
   function updateClock() {
     var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth();
+    var day = now.getDate()
     var hours = now.getHours();
     var minutes = now.getMinutes();
     var seconds = now.getSeconds();
-    var timeString = hours + ':' + formatDigits(minutes) + ':' + formatDigits(seconds);
-
+    var timeString = year + '년 ' + month + ' 월 ' + day + ' 일 ' + hours + ' : ' + formatDigits(minutes) + ' : ' + formatDigits(seconds);
+ 
     document.querySelector('.clock').textContent = timeString;
 
     setTimeout(updateClock, 1000); // 1초마다 업데이트
